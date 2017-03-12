@@ -15,5 +15,39 @@
   <%= @story.body %>
 </p>
 
+
+<h2>Comentarios (<%=@comments.length%>):</h2>
+<%@comments.each do |comment|%>
+<p>
+  Autor: <%=comment.author%> <br>
+  <%=comment.content%>
+</p>
+<%end%>
+
+<h2>Ingrese un nuevo comentario:</h2>
+
+
+<%= form_for([@story, @comment], url: story_comments_path(@story.id)) do |f| %>
+
+
+
+      <div class="field">
+        <%= f.label :autor %>
+        <%= f.text_field :author %>
+      </div>
+      <div class="field">
+        <%= f.label :Comentario %>
+        <%= f.text_field :content %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+
+  <% end %>
+
+
+
+
 <%= link_to 'Edit', edit_story_path(@story) %> |
 <%= link_to 'Back', stories_path %>

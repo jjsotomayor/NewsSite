@@ -10,6 +10,8 @@ class StoriesController < ApplicationController
   # GET /stories/1
   # GET /stories/1.json
   def show
+    @comments = Comment.where(story: @story)
+    @comment = Comment.new
   end
 
   # GET /stories/new
