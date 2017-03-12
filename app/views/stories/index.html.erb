@@ -2,30 +2,24 @@
 
 <h1>Stories</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Headline</th>
-      <th>Subtitle</th>
-      <th>Body</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
+
+<div id="all">
     <% @stories.each do |story| %>
-      <tr>
-        <td><%= story.headline %></td>
-        <td><%= story.subtitle %></td>
-        <td><%= story.body %></td>
-        <td><%= link_to 'Show', story %></td>
-        <td><%= link_to 'Edit', edit_story_path(story) %></td>
-        <td><%= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <article>
+        <div id ="headline" ><%= story.headline %></div>
+        <div id ="subtitle" ><%= story.subtitle %></div>
+        <div id ="body" ><%= story.body %></div>
+        <div id ="info">
+            <%=story.comments.count%> comments
+          <%= link_to 'Show', story %>
+          <%= link_to 'Edit', edit_story_path(story) %>
+          <%= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      </article>
+      <br>
     <% end %>
-  </tbody>
-</table>
+</div>
 
-<br>
 
 <%= link_to 'New Story', new_story_path %>
