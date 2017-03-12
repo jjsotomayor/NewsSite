@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Administrar noticias </h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Noticia</th>
+      <th>Fecha publicacion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stories.each do |story| %>
+      <tr>
+        <td><%= story.headline %></td>
+        <td><%= story.created_at %></td>
+        <td><%= link_to 'Ver', story %></td>
+        <td><%= link_to 'Editar', edit_story_path(story) %></td>
+        <td><%= link_to 'Eliminar', story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Publicar noticia', new_story_path %>

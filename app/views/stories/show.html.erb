@@ -1,20 +1,23 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Headline:</strong>
+  <strong>Titular:</strong>
   <%= @story.headline %>
 </p>
 
 <p>
-  <strong>Subtitle:</strong>
+  <strong>Bajada:</strong>
   <%= @story.subtitle %>
 </p>
 
 <p>
-  <strong>Body:</strong>
+  <strong>Cuerpo:</strong>
   <%= @story.body %>
 </p>
 
+<p>
+  <%= @story.created_at %>
+</p>
 
 <h2>Comentarios (<%=@comments.length%>):</h2>
 <%@comments.each do |comment|%>

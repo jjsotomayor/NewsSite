@@ -4,8 +4,14 @@ class StoriesController < ApplicationController
   # GET /stories
   # GET /stories.json
   def index
-    @stories = Story.all
+    @stories = Story.all.order(created_at: :desc).limit(10)
+
   end
+
+  def index_admin
+    @stories = Story.all.order(created_at: :desc)
+  end
+
 
   # GET /stories/1
   # GET /stories/1.json
@@ -58,7 +64,7 @@ class StoriesController < ApplicationController
   def destroy
     @story.destroy
     respond_to do |format|
-      format.html { redirect_to stories_url, notice: 'Story was successfully destroyed.' }
+      format.html { redirect_to '/index_admin', notice: 'Story was successfully destroyed.' } #stories_url
       format.json { head :no_content }
     end
   end

@@ -1,25 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Stories</h1>
-
-
+<h1>Historias</h1>
 
 <div id="all">
     <% @stories.each do |story| %>
-    <article>
-        <div id ="headline" ><%= story.headline %></div>
-        <div id ="subtitle" ><%= story.subtitle %></div>
-        <div id ="body" ><%= story.body %></div>
-        <div id ="info">
-            <%=story.comments.count%> comments
-          <%= link_to 'Show', story %>
-          <%= link_to 'Edit', edit_story_path(story) %>
-          <%= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </div>
-      </article>
+    <%= link_to story do %>
+      <article>
+          <div id ="headline" ><%= story.headline %></div>
+          <br>
+          <div id ="subtitle" ><%= story.subtitle %></div>
+          <br>
+          <div id ="body" ><%= truncate_letters(1000, story.body) %></div>
+          <br>
+          <div id ="info">
+              <%=story.comments.count%> comments |
+              <%=story.created_at%>
+            <%= link_to 'Ver', story %>
+          </div>
+        </article>
+      <% end %>
       <br>
     <% end %>
 </div>
-
-
-<%= link_to 'New Story', new_story_path %>
