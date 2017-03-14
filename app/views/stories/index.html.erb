@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Noticias</h1>
+<h1>Articulos</h1>
 
 <div id="all">
     <% @stories.each do |story| %>
     <%= link_to story do %>
-      <article>
+      <article id= "index">
           <div id ="headline" ><%= story.headline %></div>
           <br>
           <div id ="subtitle" ><%= story.subtitle %></div>

@@ -1,9 +1,10 @@
+
 body {
   background-color: #fff;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
+  //font-size: 13px;
+  //line-height: 18px;
   margin: 33px;
 }
 
@@ -24,12 +25,13 @@ a {
   color: #000;
 
   &:visited {
-    color: #666;
+//    color: #666;
   }
 
   &:hover {
-    color: #fff;
+    /*color: #fff;
     background-color: #000;
+*/
   }
 }
 

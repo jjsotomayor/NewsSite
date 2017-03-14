@@ -9,8 +9,10 @@
   </head>
 
   <body>
-    <%=link_to 'INICIO',  '/'%> |
-    <%=link_to 'ADMINISTRADOR',  '/index_admin'%>
+    <header>
+      <%=link_to 'INICIO',  '/'%> |
+      <%=link_to 'ADMINISTRADOR',  '/index_admin'%>
+    </header>
     <%= yield %>
   </body>
 </html>

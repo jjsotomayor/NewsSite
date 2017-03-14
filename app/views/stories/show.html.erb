@@ -1,25 +1,24 @@
 <p id="notice"><%= notice %></p>
 
+<article id = "show">
 <p>
-  <strong>Titular:</strong>
-  <%= @story.headline %>
+  <div id ="headline" ><%= @story.headline %></div>
 </p>
 
 <p>
-  <strong>Bajada:</strong>
-  <%= @story.subtitle %>
+  <div id ="subtitle" ><%= @story.subtitle %></div>
 </p>
 
 <p>
-  <strong>Cuerpo:</strong>
-  <%= @story.body %>
+  <div id ="body" ><%= @story.body %></div>
 </p>
 
 <p>
   <%= @story.created_at %>
 </p>
+</article>
 
-<h2>Comentarios (<%=@comments.length%>):</h2>
+<h3>Comentarios (<%=@comments.length%>):</h3>
 <%@comments.each do |comment|%>
 <p>
   Autor: <%=comment.author%> <br>
@@ -27,7 +26,7 @@
 </p>
 <%end%>
 
-<h2>Ingrese un nuevo comentario:</h2>
+<h4>Ingrese un nuevo comentario:</h4>
 
 
 <%= form_for([@story, @comment], url: story_comments_path(@story.id)) do |f| %>
@@ -48,9 +47,3 @@
       </div>
 
   <% end %>
-
-
-
-
-<%= link_to 'Edit', edit_story_path(@story) %> |
-<%= link_to 'Back', stories_path %>
