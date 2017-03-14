@@ -16,10 +16,11 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam dia
 
 comment = "Este es un comentario, es estandar y se refiere a una noticia, me gusta comentar, ok?"
 
-10.times do
+
+[1,2,3,4,5,6,7,8,9,10].reverse.each do |n|
   Story.create(
-    headline: text[0..(10+Random.rand(50))],
-    subtitle: text[0..(60+Random.rand(90))],
+    headline: "Titular de una noticia #{n}",
+    subtitle: "Bajada de titulo de la noticia, este es un texto un poco mas extenso #{n}",
     body:  text[0..(500+Random.rand(1000))]
     )
 end
