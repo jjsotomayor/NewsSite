@@ -24,13 +24,33 @@ comment = "Este es un comentario, es estandar y se refiere a una noticia, me gus
     body:  text[0..(500+Random.rand(1000))]
     )
 end
+# 10.times do
+#   Story.create(
+#     headline: text[0..(10+Random.rand(50))],
+#     subtitle: text[0..(60+Random.rand(90))],
+#     body:  text[0..(500+Random.rand(1000))]
+#     )
+# end
+#
+# Story.all.each do |s|
+#   Random.rand(4).times do
+#     Comment.create(
+#       story: s,
+#       author: Faker::Name.name,
+#       content: comment[0..(21+Random.rand(60))]
+#     )
+#   end
+# end
 
-Story.all.each do |s|
-  Random.rand(4).times do
-    Comment.create(
-      story: s,
-      author: Faker::Name.name,
-      content: comment[0..(21+Random.rand(60))]
-    )
-  end
-end
+
+10.times do
+  user = Faker::Internet.user_name
+   Usuario.create(
+     #usuario: Faker::Twitter.screen_name
+     usuario: user,
+     nombre: Faker::Name.first_name,
+     apellido: Faker::Name.last_name,
+     #twitter: Faker::Twitter.screen_name
+     twitter: user,
+     )
+ end
